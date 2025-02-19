@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>second page</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .album {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 15px;
+            position: relative; /* Untuk tombol tetap di dalam album */
+            padding-bottom: 80px; /* Tambahkan ruang untuk tombol */
+        }
+
+        .memory-page {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #c9f5bc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memory-page img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .memory-page img:hover {
+            transform: scale(1.05);
+        }
+
+        .memory-page p {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4em;
+            margin-top: 20px;
+        }
+
+        .memory-page video {
+            width: 100%;
+            max-width: 270px;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Tombol Next di tengah bawah */
+        .nav-btn {
+            padding: 12px 20px;
+            background: #98bd87;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            align-self: center; /* Menjaga tombol tetap di tengah */
+        }
+
+        .nav-btn:hover {
+            background: #a7cf94;
+        }
+
+        /* Responsif untuk perangkat kecil */
+        @media screen and (max-width: 768px) {
+            .album {
+                width: 90%;
+            }
+
+            .memory-page p {
+                font-size: 1em;
+            }
+
+            .memory-page video {
+                max-width: 90%;
+            }
+        }
+
+        /* Responsif untuk perangkat sangat kecil */
+        @media screen and (max-width: 480px) {
+            .memory-page p {
+                font-size: 0.9em;
+            }
+
+            .memory-page video {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="album">
+   
+    <!-- Halaman 1 -->
+    <div class="memory-page">
+        <p>she is a kind hearted, sensitive girl, soft spoken, loves nature and animals, seeing sweetness in everything. 
+            she is full of love, with the warmest smile. everything she does is filled with love, and she loves and feels deeply.
+            she is always kind and caring with everyone, always hiding her own feelings, and she does not deserve to feel unsettled, afraid, or worried </p>
+       <p>tadaa ini hilu kitty cipaa, she is so kecil, shy and crybaby</p>
+        <img src="images/s03.png" alt="Image">
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="memory-page">
+        <img src="images/s02.jpg" alt="Image">
+        <p>words will never be enough to express how blessed i am to have a caring and loving friend like you in my life and
+            i have never been good at telling people how i feel but you make me want to cry. if i bleed, you will ll be the last to know.....
+            semua foto kamu imuttttt aku bingunggg sebenarnya mau pilih yang mana, semuaaaa nya imuttttttttt:(</p>
+      </div>
+
+    <!-- Halaman 3 -->
+    <div class="memory-page">
+        <p>hiluu cipaa, kamu baik baik saja kah hari ini? pasti lagi sibuk ya, maaf ne jadi keganggu,
+            jangan lupa ambiil break ya, girl ....dann oohiya terima kasih sekali kamu bolehin aku liat foto kamu, kamuuuu imutt kecil banget... 
+            jujur ya girl, semuaa fitur wajah kamu sangat smoll dan cantikk bangetttttt, kamu itu bayi selama-lamanya.....
+            oohiya aku juga mau bilang terima kasih yang sebesar-besarnya atas paket-paketnya :(</p>
+        <img src="images/s01.jpg" alt="Image">
+    </div>
+
+    <!-- Halaman 4 - (Video) -->
+    <div class="memory-page">
+        <div class="page-content">
+            <!-- Video -->
+            <video id="cipavideo" autoplay muted loop>
+                <source src="images/s06.mp4" type="video/mp4">
+            </video>
+
+            <!-- Teks di bawah video -->
+            <p>tunguuin aku yaa, maaaaf sekali jadi buat kamu sedih karena aku lama banget balasnya 
+                paketnya, aku suka sekalii semua yang kamu kasih,, aku sedih tiap hari karena itu, aku ngerasa aku jahat sekali sama kamu, 
+                walaupun kamu bilang ngga tapi aku yakin kamu kadang kepikiran dan sedih</p>
+            <p>dann aku senang banget kalau kamu suka 
+                update story pasti imuttt semuaa, kamu lebih cantik dari apayang kamu liat, baby girl</p>
+
+        </div>
+    </div>
+
+    <!-- Tombol Next -->
+    
+    <button class="nav-btn next-btn" onclick="goToWords()">next</button>
+
+</div>
+
+<script>
+    function goToWords() {
+        window.location.href = 'words.html';
+    }
+</script>
+
+</body>
+</html>

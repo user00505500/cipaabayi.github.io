@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third Page</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+            display: none; /* Menyembunyikan gambar awalnya */
+            margin-top: 90px; /* Menambahkan jarak atas */
+            padding-left: 15px; /* Memberikan jarak di kiri */
+            padding-right: 15px; /* Memberikan jarak di kanan */
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* Tombol navigasi */
+        .controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .control-btn {
+            padding: 10px 20px;
+            background: #98bd87;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .control-btn:hover {
+            background: #a7cf94;
+        }
+
+        .nav-btn {
+            position: fixed;
+            padding: 12px 20px;
+            background: #98bd87;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+
+        .nav-btn:hover {
+            background: #a7cf94;
+        }
+
+        .back-btn {
+            left: 5%;
+            bottom: 10%;
+        }
+
+        .next-btn {
+            right: 5%;
+            bottom: 10%;
+        }
+
+        /* Responsif untuk mobile */
+        @media screen and (max-width: 600px) {
+            .image-container {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 190px; /* Menambahkan jarak atas */
+        }
+            .nav-btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .back-btn {
+                left: 3%;
+                bottom: 7%;
+            }
+
+            .next-btn {
+                right: 3%;
+                bottom: 7%;
+            }
+
+            /* Mengurangi padding untuk mobile jika perlu */
+            .image-container {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Halaman gambar -->
+    <div class="image-container" id="page1">
+        <img src="images/019.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/01.jpg" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="page1">
+        <img src="images/02.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/03.jpg" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="page1">
+        <img src="images/04.jpg" alt="Image 1">
+    </div>
+    
+    <div class="image-container" id="page2">
+        <img src="images/08.jpg" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/09.jpg" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="page1">
+        <img src="images/010.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/011.jpg" alt="Image 2">
+    </div>
+
+    <div class="image-container" id="page1">
+        <img src="images/012.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/013.jpg" alt="Image 2">
+    </div>
+    
+    <div class="image-container" id="page1">
+        <img src="images/014.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/015.jpg" alt="Image 2">
+    </div>
+     
+    <div class="image-container" id="page1">
+        <img src="images/016.jpg" alt="Image 1">
+    </div>
+
+    <div class="image-container" id="page2">
+        <img src="images/017.jpg" alt="Image 2">
+    </div>
+
+    <!--  komen -->
+    <!-- <div class="image-container" id="page3">...</div> -->
+
+    <!-- Tombol navigasi (Previous, Next) -->
+    <div class="controls">
+        <button class="control-btn" onclick="prevPage()">⬅</button>
+        <button class="control-btn" onclick="nextPage()">➡</button>
+    </div>
+
+    <!-- Tombol Back, Next untuk halaman -->
+    <button class="nav-btn back-btn" onclick="goToHer()">back</button>
+    <button class="nav-btn next-btn" onclick="goToTree()">next</button>
+
+    <script>
+        let currentPage = 0; // Halaman pertama yang ditampilkan
+        const pages = document.querySelectorAll('.image-container');
+
+        // Fungsi untuk pindah ke halaman berikutnya
+        function nextPage() {
+            if (currentPage < pages.length - 1) {
+                pages[currentPage].style.display = 'none'; // Menyembunyikan halaman sekarang
+                currentPage++;
+                pages[currentPage].style.display = 'block'; // Menampilkan halaman berikutnya
+            }
+        }
+
+        // Fungsi untuk pindah ke halaman sebelumnya
+        function prevPage() {
+            if (currentPage > 0) {
+                pages[currentPage].style.display = 'none'; // Menyembunyikan halaman sekarang
+                currentPage--;
+                pages[currentPage].style.display = 'block'; // Menampilkan halaman sebelumnya
+            }
+        }
+
+        // Fungsi untuk tombol Back
+        function goToHer() {
+            window.location.href = 'her.html'; // Halaman tujuan Back
+        }
+
+        // Fungsi untuk tombol Next
+        function goToTree() {
+            window.location.href = 'tree.html'; // Halaman tujuan Next
+        }
+
+        // Menampilkan halaman pertama ketika halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            pages[currentPage].style.display = 'block'; // Menampilkan halaman pertama
+        });
+    </script>
+
+</body>
+</html>

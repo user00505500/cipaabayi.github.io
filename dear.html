@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>last</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .message {
+            font-size: 1.5em;
+            color: #83d190;
+            background-color: #eeffe3;
+            border: 3px dashed #83d190; /* Tepi seperti garis putus-putus */
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            max-width: 80%;
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out;
+            display: inline-block;
+        }
+
+        .message:before {
+            content: "🌿"; /* Tambahkan ikon buku atau catatan */
+            font-size: 1.5em;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .message:after {
+            content: "🍼"; /* Stiker hati kecil */
+            font-size: 1.5em;
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .btn {
+            padding: 15px 25px;
+            background: #98bd87;
+            border: none; /* Menghilangkan border */
+            border-radius: 15px;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background: #a7cf94;
+            transform: scale(1.1);
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsif untuk perangkat mobile */
+        @media screen and (max-width: 768px) {
+            .message {
+                font-size: 1.2em;
+                padding: 20px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+        }
+
+        /* Responsif untuk perangkat lebih kecil dari 600px (ponsel) */
+        @media screen and (max-width: 600px) {
+            .message {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .btn {
+                padding: 10px 18px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">dank yu suda buka cipaa</div>
+
+    <div class="container">
+        <button class="btn" onclick="goToPlaylist()">playlist</button>
+    </div>
+
+    <div class="container">
+        <button class="btn" onclick="goToSave()">you are</button>
+        <button class="btn" onclick="goToSoft()">a delicate little baby</button>
+    </div>
+
+    <script>
+        function goToPlaylist() {
+            window.location.href = 'https://open.spotify.com/playlist/2n0DzhUKnWxfI3MSQ5wSxD?si=ZrVCP5_4TSOkiAlErM5HNw&pi=YrcPIw2WQBqhJ';
+        }
+
+        function goToSave() {
+            window.location.href = 'https://vt.tiktok.com/ZSMjYq4cU/';  // Ganti dengan halaman galeri foto Syifa
+        }
+
+        function goToSoft() {
+            window.location.href = 'https://whatsapp.com/channel/0029Vb5xPf8FMqrUR9z9231k';  // Ganti dengan halaman alam atau kegiatan
+        }
+    </script>
+
+</body>
+</html>

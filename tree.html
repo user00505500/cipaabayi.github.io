@@ -1,0 +1,235 @@
+<!DOCTYPE html> 
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>third page</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #444;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Membungkus Title & Pohon */
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Styling untuk Title */
+        .title {
+            font-size: 1em;
+            background: linear-gradient(135deg, #ddf7c5, #bdf8ab);
+            display: inline-block;
+            padding: 20px 25px;
+            border-radius: 20px;
+            color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 30px;
+            margin-bottom: -70px;
+        }
+
+        /* Container Pohon */
+        .tree-container {
+            position: relative;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+
+        .tree {
+            width: 100%;
+        }
+
+        /* Animasi bunga mengambang */
+        @keyframes floating {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Animasi goyang kecil saat diklik */
+        @keyframes wiggle {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            75% { transform: scale(1.1) rotate(-3deg); }
+            100% { transform: scale(1.1) rotate(3deg); }
+        }
+
+        /* Styling untuk bunga */
+        .flower {
+            position: absolute;
+            cursor: pointer;
+            width: 40px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            animation: floating 2.5s ease-in-out infinite;
+        }
+
+        .flower:hover {
+            transform: scale(1.2) rotate(8deg);
+            filter: drop-shadow(0 0 10px pink);
+        }
+
+        .flower:active {
+            animation: wiggle 0.4s ease-in-out;
+        }
+
+        /* Popup */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff9e3;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none;
+        }
+
+        .popup img {
+            max-width: 200px;
+            border-radius: 10px;
+            margin-top: 9px;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #98bd87;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .close-btn:hover {
+            background: #a7cf94;
+        }
+
+        /* Tombol Navigasi */
+        .nav-btn {
+            position: fixed;
+            padding: 12px 20px;
+            background: #98bd87;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+
+        .nav-btn:hover {
+            background: #a7cf94;
+        }
+
+        .back-btn {
+            left: 5%;
+            bottom: 10%;
+        }
+
+        .next-btn {
+            right: 5%;
+            bottom: 10%;
+        }
+
+        /* Responsif untuk mobile */
+        @media screen and (max-width: 600px) {
+            .nav-btn {
+                padding: 10px 18px;
+                font-size: 0.9em;
+            }
+
+            .back-btn {
+                left: 3%;
+                bottom: 7%;
+            }
+
+            .next-btn {
+                right: 3%;
+                bottom: 7%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Membungkus Title dan Pohon -->
+    <div class="title-container">
+        <h1 class="title">soft petals for cipa, tap tap</h1>
+        <div class="tree-container">
+            <img src="images/tree.png" alt="tree" class="tree">
+
+            <!-- Bunga Interaktif -->
+            <!-- Bunga dengan gambar yang bisa muncul -->
+        <img src="images/bungahijau.png" alt="Bunga" class="flower" 
+        style="top: 51%; left: 29%;" 
+        onclick="showPopup('hiluuu kitty girl, kannnnn imuttt cantikkk lagiiiiii, potobut kamu waktu itu cantiiiiikkk bangetttt, beneran beb.. aku gak boong kamuuuu glowingggggg cantikkkkk imuttttttttt...pokonya gak ngapa-ngapain aja cantikkk pollllllll', 't03.jpg')">
+
+        <img src="images/bunga.png" alt="Bunga" class="flower" 
+        style="top: 57%; left: 63%;" 
+        onclick="showPopup('zip zip zip zip dan wuf yuu girl. tadinya mau ada sound gitu-gitu disini tapi tiba-tiba error, pakai lagu meow meow yang sedi...kann liat kamuuuu dimana-mana cantikkkk aku pusingggggg', 't02.jpg')">
+
+        <img src="images/bunga.png" alt="Bunga" class="flower" 
+        style="top: 46%; left: 35%;" 
+        onclick="showPopup('aku aja sampai bingung mau pilih yang manaaaaa poto kaamu semuaaanya cantikk, kalau kamu jadi warna, kamu itu hijau soft sama pink soft, karenaaa kamu gemesss..kamu minggu ini ada break kah?, pasti tenaganya abis buat kerjaa dan pasti ngantukkkkk', 't04.jpg')">
+   
+        <img src="images/bungahijau.png" alt="Bunga" class="flower" 
+        style="top: 47%; left: 50%;" 
+        onclick="showPopup('sebenarnya aku werewolf alpha dominant, tapi sayangnya kamu itu imut cute girl. makanya semua jadi imutt-imut, kalau aja tadinya gak error pasti tadinya ada sound disini, sound werewolf au au auu', 't07.jpg')">
+        
+        <img src="images/bungahijau.png" alt="Bunga" class="flower" 
+        style="top: 52%; left: 57%;" 
+        onclick="showPopup('capekkan bacaain tulisan sepanjang ini, melebihi literasi padahal kamuuu uda pinterrr,selain warnaa hijau soft kamu suka apa saja? dan kamu pasti ngantukkkkk sekarang, gak ada tidurrr, bobok yang cukupppp girll, cinta cinta banyak banyakkk untuk kamuu', 't06.jpg')">
+
+        <img src="images/bungahijau.png" alt="Bunga" class="flower" 
+        style="top: 41%; left: 44%;" 
+        onclick="showPopup('wi wi wiiiii, wi wi wiiiii, uyayaaaa, wa wa waaaa, wu wu uyeeee, wi wi wiiiiii, dank yuu suda bukaaa cipaaa, dank yuu girl...', 't05.jpg')">
+        </div>
+     </div>
+    
+    <!-- Kotak Pop-Up -->
+    <div id="popup" class="popup">
+        <p id="popup-text"></p>
+        <img id="popup-img" src="" alt="Cipa">
+        <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <!-- Tombol Navigasi -->
+    <button class="nav-btn back-btn" onclick="goToWords()">back</button>
+    <button class="nav-btn next-btn" onclick="goToDear()">next</button>
+
+    <!-- JavaScript -->
+    <script>
+        function showPopup(text, imgSrc) {
+            document.getElementById('popup-text').innerText = text;
+            document.getElementById('popup-img').src = "images/" + imgSrc;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function goToWords() {
+            window.location.href = 'words.html';
+        }
+
+        function goToDear() {
+            window.location.href = 'dear.html';
+        }
+    </script>
+
+</body>
+</html>
